@@ -15,7 +15,7 @@ pygame.display.set_caption("智能避障机器人模拟")
 clock = pygame.time.Clock()
 
 # 常量定义
-ROBOT_RADIUS = 15
+ROBOT_RADIUS = 10
 SENSOR_LENGTH = 100
 SENSOR_COUNT = 32
 VELOCITY = 3.0
@@ -225,3 +225,4 @@ def main():
 if __name__ == "__main__":
     main()
     pygame.quit()
+
