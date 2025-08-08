@@ -1,1 +1,0 @@
-# Robot-collision-avoidance-based-on-feedforward-neural-network
