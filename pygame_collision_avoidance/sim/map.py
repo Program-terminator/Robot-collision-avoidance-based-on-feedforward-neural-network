@@ -397,11 +397,70 @@ def create_map(version="v1"):
             pygame.Rect(225, 350, 65, 185),  # 纵向长方形
             pygame.Rect(675, 350, 175, 175),  # 正方形
         ]
+    # 简单地图1 - 几个简单的障碍物，开放空间较多
+    elif version == "simple1":
+        obstacles = [
+            pygame.Rect(200, 100, 50, 200),  # 左侧纵向墙
+            pygame.Rect(500, 300, 50, 200),  # 右侧纵向墙
+            pygame.Rect(350, 200, 100, 50),  # 中间横向墙
+        ]
+    # 简单地图2 - L形障碍物
+    elif version == "simple2":
+        obstacles = [
+            pygame.Rect(300, 100, 50, 300),  # 竖直部分
+            pygame.Rect(300, 350, 300, 50),  # 水平部分
+        ]
+    # 简单地图3 - 几个分散的小方块
+    elif version == "simple3":
+        obstacles = [
+            pygame.Rect(150, 150, 70, 70),  # 左上角方块
+            pygame.Rect(550, 150, 70, 70),  # 右上角方块
+            pygame.Rect(150, 400, 70, 70),  # 左下角方块
+            pygame.Rect(550, 400, 70, 70),  # 右下角方块
+            pygame.Rect(350, 275, 70, 70),  # 中心方块
+        ]
+    # 简单地图4 - 单一通道
+    elif version == "simple4":
+        obstacles = [
+            pygame.Rect(100, 100, 600, 50),  # 上方墙
+            pygame.Rect(100, 400, 600, 50),  # 下方墙
+            pygame.Rect(400, 150, 50, 100),  # 中间障碍物上部分
+            pygame.Rect(400, 300, 50, 100),  # 中间障碍物下部分
+        ]
+    # 简单地图5 - 简单迷宫
+    elif version == "simple5":
+        obstacles = [
+            pygame.Rect(200, 100, 50, 200),  # 第一道墙
+            pygame.Rect(400, 250, 50, 200),  # 第二道墙
+            pygame.Rect(600, 100, 50, 200),  # 第三道墙
+        ]
+    # 简单地图6 - 回形
+    elif version == "simple6":
+        obstacles = [
+            pygame.Rect(360, 210, 180, 180),
+            # 左上角
+            pygame.Rect(250, 100, 150, 50),
+            pygame.Rect(250, 100, 50, 150),
+            # 右上角
+            pygame.Rect(500, 100, 150, 50),
+            pygame.Rect(600, 100, 50, 150),
+            # 左下角
+            pygame.Rect(250, 450, 150, 50),
+            pygame.Rect(250, 350, 50, 150),
+            # 右下角
+            pygame.Rect(500, 450, 150, 50),
+            pygame.Rect(600, 350, 50, 150)
+        ]
     return obstacles
 
 # 获取所有地图版本
 def get_all_map_versions():
-    return [f"v{i}" for i in range(1, 23)]
+    # 数字版本的地图
+    numeric_versions = [f"v{i}" for i in range(1, 23)]
+    # 简单地图版本
+    simple_versions = [f"simple{i}" for i in range(1, 6)]
+    # 合并所有版本
+    return numeric_versions + simple_versions
 
 # 随机选择地图
 def random_map(exclude=None):
