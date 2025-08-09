@@ -1107,6 +1107,10 @@ def main():
                     MAP_VERSION = "simple5"
                     main()
                     return
+                elif event.key == pygame.K_6:  # 切换到简单地图5
+                    MAP_VERSION = "simple6"
+                    main()
+                    return
                 elif event.key == pygame.K_s:  # 循环切换简单地图
                     current_simple_map_index = (current_simple_map_index % 5) + 1
                     MAP_VERSION = f"simple{current_simple_map_index}"
@@ -1216,3 +1220,4 @@ def main():
 if __name__ == "__main__":
     main()
     pygame.quit()
+
